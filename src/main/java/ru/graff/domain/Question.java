@@ -22,12 +22,17 @@ public class Question {
         return question;
     }
 
-    public String getAnswer() {
-        return String.join(", ", answer1, answer2, answer3, answer4);
-    }
-
     public boolean checkAnswer(int answer) {
         return this.answer == answer;
+    }
+
+    @Override
+    public String toString() {
+        return question + "\n" +
+                answer1 + ", " +
+                answer2 + ", " +
+                answer3 + ", " +
+                answer4;
     }
 
 }
