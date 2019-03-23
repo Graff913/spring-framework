@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application.yml")
 @Repository
 public class TestingDaoSimple implements TestingDao {
 

@@ -1,0 +1,4 @@
+locale: RU
+file.path: tests_ru.csv
+#locale: EN
+#file.path: tests.csv
