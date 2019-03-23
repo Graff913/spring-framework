@@ -1,7 +1,7 @@
 package ru.graff.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Repository;
 import ru.graff.domain.Question;
 
@@ -12,21 +12,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+@PropertySource("classpath:application.properties")
 @Repository
 public class TestingDaoSimple implements TestingDao {
 
     private static String CSV_SPLIT = ";";
 
-    @Autowired
-    private MessageSource messageSource;
-
     private List<Question> questions = new ArrayList<>();
+    private String filePath;
+
+    public TestingDaoSimple(@Value("${file.path}") String filePath) {
+        this.filePath = filePath;
+    }
 
     @Override
     public void readQuestions(Locale locale) {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
-            File file = new File(classLoader.getResource(messageSource.getMessage("file.path", new String[] {}, locale)).getFile());
+            File file = new File(classLoader.getResource(filePath).getFile());
             List<String> lines = Files.readAllLines(file.toPath());
             for (String line : lines) {
                 String[] temps = line.split(CSV_SPLIT);
