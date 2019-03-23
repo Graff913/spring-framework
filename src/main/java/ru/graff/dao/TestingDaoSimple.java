@@ -17,6 +17,7 @@ import java.util.Locale;
 public class TestingDaoSimple implements TestingDao {
 
     private static String CSV_SPLIT = ";";
+
     private List<Question> questions = new ArrayList<>();
     private String filePath;
 
