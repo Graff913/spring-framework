@@ -11,8 +11,7 @@ import ru.graff.domain.Person;
 import java.util.Locale;
 import java.util.Scanner;
 
-
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application.yml")
 @Service
 public class TestingServiceImpl implements TestingService {
 
