@@ -1,4 +1,5 @@
-locale: RU
-file.path: tests_ru.csv
-#locale: EN
-#file.path: tests.csv
+application:
+  locale: EN #ENRU
+
+file:
+  path: tests.csv #tests_ru.csv
