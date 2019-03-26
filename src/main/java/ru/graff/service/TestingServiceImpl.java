@@ -2,7 +2,6 @@ package ru.graff.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import ru.graff.dao.PersonDao;
 import ru.graff.dao.TestingDao;
@@ -11,7 +10,6 @@ import ru.graff.domain.Person;
 import java.util.Locale;
 import java.util.Scanner;
 
-@PropertySource("classpath:application.yml")
 @Service
 public class TestingServiceImpl implements TestingService {
 
@@ -20,7 +18,7 @@ public class TestingServiceImpl implements TestingService {
     private final PersonDao personDao;
     private final TestingDao testingDao;
 
-    public TestingServiceImpl(@Value("${locale}")String locale, MessageSource messageSource, PersonDao personDao, TestingDao testingDao) {
+    public TestingServiceImpl(@Value("${application.locale}")String locale, MessageSource messageSource, PersonDao personDao, TestingDao testingDao) {
         this.messageSource = messageSource;
         this.personDao = personDao;
         this.testingDao = testingDao;

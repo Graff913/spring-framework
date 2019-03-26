@@ -1,7 +1,6 @@
 package ru.graff.dao;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Repository;
 import ru.graff.domain.Question;
 
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-@PropertySource("classpath:application.yml")
 @Repository
 public class TestingDaoSimple implements TestingDao {
 
